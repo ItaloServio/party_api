@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/index.ts"
+    "build": "tsc",
+    "start:dev": "nodemon ./src/index.ts",
+    "start:prod": "node ./build/src/index.js"
   },
   "dependencies": {
     "debug": "~2.6.9",

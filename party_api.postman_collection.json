@@ -15,7 +15,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -93,7 +93,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 48e9db384e4169c66ce58e708712e37233e4c9367251088e85eb5af913ca60af",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -122,7 +122,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -155,7 +155,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer ed13c687d9ecb8e68957ef4964f41b75b9324650acfc0394bb8d3e5684bd853e",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -186,7 +186,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer ed13c687d9ecb8e68957ef4964f41b75b9324650acfc0394bb8d3e5684bd853e",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -210,7 +210,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer c78f71685ddab5fb520ebf8d1810ef08c73da8ee8b7b97339311351958efb686",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -267,7 +267,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 2efb10b20e790da94f683573ab55db8c9dece6b31f50a9de2551f10f5c6d5842",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
@@ -300,7 +300,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"value": "Bearer {{token}}",
 								"type": "text"
 							}
 						],
