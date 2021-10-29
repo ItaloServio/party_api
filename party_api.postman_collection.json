@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "109239b4-326f-45e3-be04-b9219970c5cb",
+		"name": "party_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/user/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"servioitalo@gmail.com\",\r\n    \"pass\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/user/authenticate",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tallys Witer\",\r\n    \"pass\": \"123\",\r\n    \"email\": \"tallys@party.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/user/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 48e9db384e4169c66ce58e708712e37233e4c9367251088e85eb5af913ca60af",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/user/profile",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "party",
+			"item": [
+				{
+					"name": "new",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Second party\",\r\n    \"max_members\": 3,\r\n    \"max_cost\": 40.00,\r\n    \"location\": \"Bear\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/party/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ed13c687d9ecb8e68957ef4964f41b75b9324650acfc0394bb8d3e5684bd853e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/party/manager",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"manager"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invited",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ed13c687d9ecb8e68957ef4964f41b75b9324650acfc0394bb8d3e5684bd853e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/party/invited",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"invited"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{endpoint}}/party/4",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer c78f71685ddab5fb520ebf8d1810ef08c73da8ee8b7b97339311351958efb686",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tallys@party.com\",\r\n    \"party_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/party/invite",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"invite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decision",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 2efb10b20e790da94f683573ab55db8c9dece6b31f50a9de2551f10f5c6d5842",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"party_id\": 4,\r\n    \"decision\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/party/decision",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"decision"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 874fb457bd5543728b9ef913427dc4f94d46895752b3932864cadc4fbf3cc11c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Carne\",\r\n    \"price\": 22.90,\r\n    \"party_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/party/cost/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"party",
+								"cost",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
