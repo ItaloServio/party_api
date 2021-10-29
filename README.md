@@ -1,4 +1,4 @@
-<h1 align="center">Party API 📚</h1>
+<h1 align="center">Party API 🥳</h1>
 <p align="center">
 API developed for a party management app. Created using NodeJS with Express and Typescript, the database layer was abstracted with TypeORM and SQLite, and, validating DTOs using Yup and Access Tokens
 </p>
