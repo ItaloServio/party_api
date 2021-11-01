@@ -15,13 +15,22 @@ export class UserService {
 
       const body: User = req.body
 
+      const entityManager = getManager()
+      const exists = await entityManager.findOne(UserEntity, {
+        select: ['id'],
+        where: {
+          email: body.email!
+        }
+      })
+
+      if (exists && exists.id) throw 'User already created'
+
       const user = new UserEntity()
       user.email = body.email!
       user.pass = crypto.createHash('sha256').update(body.pass!).digest('hex')
       user.name = body.name!
       user.created_at = Tools.getLocalDateISO()
 
-      const entityManager = getManager()
       await entityManager.save(UserEntity, user)
 
       res.status(201).send()
