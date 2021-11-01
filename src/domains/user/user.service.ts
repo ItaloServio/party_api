@@ -89,7 +89,7 @@ export class UserService {
 
   static async profile(req: Request, res: Response) {
     try {
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user: User = await res.locals.user
       res.status(200).json(user)
     } catch (e) {
       res.status(400).json({

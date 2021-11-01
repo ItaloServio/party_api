@@ -18,10 +18,10 @@ export class PartyService {
       const isValid = await newDto.isValid(req.body)
       if (!isValid) throw 'Invalid object'
 
-      const entityManager = getManager()
-      const user = await Tools.getUserByToken(req.headers.authorization!)
-
+      const user: User = res.locals.user
       const body: NewDto = req.body
+
+      const entityManager = getManager()
       await entityManager.transaction(async transaction => {
         const party = new PartyEntity()
         party.name = body.name!
@@ -52,7 +52,7 @@ export class PartyService {
 
   static async getManaged(req: Request, res: Response) {
     try {
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user: User = res.locals.user
       const parties = await PartyService.getParties(user, true)
       res.status(200).json(parties)
     } catch (e) {
@@ -65,7 +65,7 @@ export class PartyService {
 
   static async getInvited(req: Request, res: Response) {
     try {
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user = res.locals.user
       const parties = await PartyService.getParties(user, false)
       res.status(200).json(parties)
     } catch (e) {
@@ -150,9 +150,9 @@ export class PartyService {
       if (!isValid) throw 'Invalid object'
 
       const body: InviteDto = req.body
-      const entityManager = getManager()
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user: User = res.locals.user
 
+      const entityManager = getManager()
       const party = await entityManager.findOne(PartyEntity, {
         where: { id: body.party_id, manager: user.id! },
       })
@@ -189,9 +189,9 @@ export class PartyService {
       if (!isValid) throw 'Invalid object'
 
       const body: CostDto = req.body
-      const entityManager = getManager()
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user: User = res.locals.user
 
+      const entityManager = getManager()
       const party = await entityManager.findOne(PartyEntity, {
         where: { id: body.party_id, manager: user.id! },
       })
@@ -218,9 +218,9 @@ export class PartyService {
       if (!isValid) throw 'Invalid object'
 
       const body: DecisionDto = req.body
-      const entityManager = getManager()
-      const user = await Tools.getUserByToken(req.headers.authorization!)
+      const user: User = res.locals.user
 
+      const entityManager = getManager()
       const party = await entityManager.findOne(PartyEntity, {
         where: { id: body.party_id },
       })

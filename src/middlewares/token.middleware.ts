@@ -21,6 +21,7 @@ export function tokenMiddleware() {
 
       if (nowTimestamp > expireTimestamp) throw 'Token expired'
 
+      res.locals.user = user
       next()
     } catch (e) {
       console.log('deu pau', e)
