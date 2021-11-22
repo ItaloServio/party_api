@@ -164,7 +164,7 @@ export class PartyService {
       if (!member) throw 'Invalid member identifier'
 
       const register = await entityManager.findOne(PartyUserEntity, {
-        where: { user_id: member.id },
+        where: { user_id: member.id, party_id: party.id },
       })
       if (register) throw 'Member already invited'
 
